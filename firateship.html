@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body{
+			overflow: hidden;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+		}
+
+		.pirate-ship{
+			display: inline-block;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			background:url('img/pirateShip.svg');
+			background-repeat: no-repeat;
+			background-size: 300px 300px;
+			width: 300px;
+			height: 300px;
+			animation: shipmove 25s ease-in infinite forwards,
+						up 10s infinite;
+			
+		}
+
+		.ship{
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 100%;
+			animation:  rotate 1.5s infinite; 
+			transform-origin:top center;
+		}
+
+		@keyframes shipmove{
+			0%{
+				transform: translateX(300px);
+			}
+
+			100%{
+				transform: translateX(-1500px);
+			}
+		}
+
+		@keyframes up{
+			0%{
+				bottom:-8px;	
+			}
+
+			50%{
+				bottom:13px;
+			}
+
+			100%{
+				bottom: -8px;
+			}
+		}
+
+		@keyframes rotate{
+			0%{
+				transform: rotateZ(2deg);	
+			}
+
+			50%{
+				transform: rotateZ(0deg);
+			}
+
+			100%{
+				transform: rotateZ(2deg);
+			}
+		}
+
+
+
+
+		.water, .water2{
+			position: absolute;
+			background-repeat: repeat-x;
+			background-position: 0px 0px;
+			padding: 0;
+			margin: 0;
+		}
+
+		.water2{
+			bottom: -15px;
+			background: url('img/water2.svg');
+			background-size: 70px 60px;
+			width: 100%;
+			height: 80px;
+			animation: mov 30s linear infinite;
+		}
+
+		.water{
+			bottom: -10px;
+			background: url('img/water.svg');
+			background-size: 100px 80px;
+			width: 100%;
+			height: 80px;
+			animation: mov 20s linear infinite;
+		}
+
+		@keyframes mov{
+			from{
+				background-position: 0 0;
+			}
+
+			to{
+				background-position: 100% 0;
+			}
+		}
+
+		.sky{
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+			background: linear-gradient(40deg, #cdf7f6, #6ceae6, #14bef2);
+		}
+
+		.sky .sm-cloud{
+			position: absolute;
+			background:url('img/sm_cloud.svg');
+			background-size: 200px 100px;
+			background-repeat: no-repeat;
+			width: 200px;
+			height: 100px;
+			
+			animation:sm-cloud 50s ease infinite;
+		}
+
+		.sky .csm1{
+			top:300px;
+			left: 0;
+		}
+
+		.sky .csm2{
+			top:400px;
+			left: 500px;
+		}
+
+		.sky .lg-cloud{
+			position: absolute;
+			background:url('img/lg_cloud.svg');
+			background-size: 300px 200px;
+			background-repeat: no-repeat;
+			width: 300px;
+			height: 200px;
+			top:50px;
+			left: 10px;
+			animation:lg-cloud 70s ease infinite;
+		}
+
+
+		@keyframes lg-cloud{
+			0%{
+				transform: translateX(-300px);
+			}
+
+			100%{
+				transform: translateX(1500px);
+			}
+		}
+
+		@keyframes sm-cloud{
+			0%{
+				transform: translateX(1500px);
+			}
+
+			100%{
+				transform: translateX(-300px);
+			}
+		}
+
+		.description{
+			z-index: 10;
+			display: inline-block;
+			position: absolute;
+			top: 50px;
+			left: 50%;
+			transform: translateX(-50%);
+			text-align: center;
+			color: white;
+			font-family: consolas, monospace;
+			padding: 2rem;
+			background-color: rgba(0,0,0,0.3);
+			border-radius:3rem;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="sky">
+		<div class="description">
+			<h1>Pirate Ship</h1>
+			<h5>just for Fun</h5>
+		</div>
+		<div class="sm-cloud csm1">
+		</div>
+
+		<div class="sm-cloud csm2">
+		</div>
+
+		<div class="lg-cloud">
+		</div>
+	</div>
+	<div class="water2">
+	</div>
+	<div class="ship">
+		<div class="pirate-ship">
+			
+		</div>
+	</div>
+	<div class="water">
+	</div>
+</body>
+</html>
